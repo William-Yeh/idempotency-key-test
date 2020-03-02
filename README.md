@@ -48,6 +48,7 @@ go build -o iktest ./...
    ```
 
    You may see the output similar to this:
+
    ![Output](output.png)
 
    
