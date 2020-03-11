@@ -22,26 +22,32 @@ go build -o iktest ./...
 ### Run with local database
 
 1. Start your local Postgres server.
- 
-2. Set environment variable `$DSN` for convenience:
+
+2. Visudo to enable no-password access for `purge` under Mac:
+
+   ```
+   %admin	ALL=NOPASSWD: /usr/sbin/purge
+   ```
+
+3. Set environment variable `$DSN` for convenience:
 
    ```
    export DSN='postgres://iktest@localhost/iktest?sslmode=disable'
    ```
 
-3. Run the program with 1,000 items:
+4. Run the program with 1,000 items:
 
    ```
    ./iktest $DSN -n 1000
    ```
 
-4. Run the program in verbose mode:
+5. Run the program in verbose mode:
 
    ```
    ./iktest $DSN -v
    ```
 
-5. If everything is ok, run the program with 1,000,000 items:
+6. If everything is ok, run the program with 1,000,000 items:
 
    ```
    ./iktest $DSN -n 1000000
@@ -51,8 +57,8 @@ go build -o iktest ./...
 
    ![Output](output.png)
 
-   
-   
+
+
 
 ### Run with remote database
 
